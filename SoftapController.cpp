@@ -216,8 +216,8 @@ int SoftapController::fwReloadSoftap(int argc, char *argv[])
     } else if (strcmp(argv[3], "STA") == 0) {
         fwpath = (char *)wifi_get_fw_path(WIFI_GET_FW_PATH_STA);
     }
-    if (!fwpath)
-        return ResponseCode::CommandParameterError;
+    //if (!fwpath)
+    //    return ResponseCode::CommandParameterError;
     if (wifi_change_fw_path((const char *)fwpath)) {
         ALOGE("Softap fwReload failed");
         return ResponseCode::OperationFailed;
